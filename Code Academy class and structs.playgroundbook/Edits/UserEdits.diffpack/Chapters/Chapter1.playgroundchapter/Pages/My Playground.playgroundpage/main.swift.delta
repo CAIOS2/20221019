@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>//---------- Inheretance concept ----------//
+
+class ParentClass {
+    
+    // Parent metodas
+    func printSomeName() {
+        print("Vincent")
+    }
+}
+
+class ChildClass: ParentClass { // Paveldziu parent klase
+    
+    var defaultName: String = "Default name"
+    
+        // Perrasau parent metoda su savo implementacija
+    override func printSomeName() {
+        // Kvieciu pirmiau is parent clases metoda, o tada jau spausdinu savo
+        super.printSomeName()
+        print("🐸🐸🐸")
+    }
+}
+
+
+//Testuojam
+let childClass = ChildClass()
+//childClass.printSomeName()
+
+let parentClass = ParentClass()
+//parentClass.printSomeName()
+
+
+//---------- Reference type concept ----------//
+
+
+//let firstChildClass = ChildClass()
+//let anotherChildClass = firstChildClass//ChildClass()
+//
+//    anotherChildClass.defaultName = "🐥"
+//print(firstChildClass.defaultName)
+//print(anotherChildClass.defaultName)
+//
+//firstChildClass.defaultName = "🐗"
+//print(firstChildClass.defaultName)
+//print(anotherChildClass.defaultName)
+
+//let firstChildClass = ChildClass()
+//var anotherChildClass = ChildClass()
+//anotherChildClass.defaultName = "fjslkfjsdklf"
+//let thirdChildClass = anotherChildClass
+//
+//anotherChildClass = firstChildClass
+//print(thirdChildClass.defaultName)
+//
+//anotherChildClass.defaultName = "🐥"
+//print(firstChildClass.defaultName)
+//print(anotherChildClass.defaultName)
+//
+//firstChildClass.defaultName = "🐗"
+//print(firstChildClass.defaultName)
+//print(anotherChildClass.defaultName)
+
+
+//---------- Value type concept ----------//
+
+struct MyStruct {
+    var defaultName: String = "Default name"
+    
+    mutating func changeName() {
+        defaultName = "changed name"
+    }
+}
+
+var firstStruct = MyStruct()
+let secondStruct = firstStruct
+
+firstStruct.changeName()
+
+print(firstStruct.defaultName)
+print(secondStruct.defaultName)
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1846}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
